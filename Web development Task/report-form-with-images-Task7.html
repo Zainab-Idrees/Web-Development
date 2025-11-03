@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Form with Image Buttons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        input[type="image"] {
+            width: 100px;
+            height: 100px;
+            margin: 0 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Report Form</h2>
+
+    <form action="#" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country" required>
+            <option value="Australia">Australia</option>
+            <option value="Canada">Canada</option>
+            <option value="India">India</option>
+            <option value="Pakistan" selected>Pakistan</option>
+            <option value="Qatar">Qatar</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="United States">United States</option>
+        </select>
+
+        <label for="report">Report:</label>
+        <textarea id="report" name="report" rows="5" placeholder="Write your report here..." required></textarea>
+
+        <div class="buttons">
+            <!-- Submit Button with Image -->
+            <input type="image" src="assets/submit.png" alt="Submit" title="Submit Form">
+
+            <!-- Reset Button with Image -->
+            <input type="image" src="assets/reset.jpg" alt="Reset" title="Reset Form" onclick="this.form.reset(); return false;">
+        </div>
+    </form>
+
+</body>
+</html>
