@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Greeting Message</title>
+</head>
+<body>
+
+    <!-- Use If...else statement of JavaScript to write a code to Display “Good Morning” or “Good Afternoon” according to current Time. -->
+
+<h2 id="greeting"></h2>
+
+<script>
+  let time = new Date().getHours(); // Get current hour (0–23)
+  let message;
+
+  if (time < 12) {
+    message = "Good Morning";
+  } else {
+    message = "Good Afternoon";
+  }
+
+// if print good evening
+// } else if (time < 18) {
+//   message = "Good Afternoon";
+// } else {
+//   message = "Good Evening";
+// }
+
+  document.getElementById("greeting").innerHTML = message;
+</script>
+
+</body>
+</html>
