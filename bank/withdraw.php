@@ -1,0 +1,47 @@
+<?php
+require_once 'BankAccount.php';
+session_start();
+
+if (!isset($_SESSION['logged_in'])) {
+    header("Location: create_account.php");
+    exit;
+}
+
+$name = $_SESSION['logged_in'];
+$account = $_SESSION['accounts'][$name];
+$message = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $amount = floatval($_POST['amount']);
+    $message = $account->withdraw($amount);
+    $_SESSION['accounts'][$name] = $account;
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Withdraw</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5" style="max-width: 500px;">
+    <div class="card p-4 shadow">
+        <h2 class="text-center">Withdraw Money</h2>
+
+        <?php if ($message): ?>
+            <div class="alert alert-warning"><?= $message ?></div>
+        <?php endif; ?>
+
+        <form method="POST">
+            <input type="number" name="amount" class="form-control mb-3" placeholder="Enter amount" required>
+            <button class="btn btn-danger w-100">Withdraw</button>
+        </form>
+
+        <a href="dashboard.php" class="btn btn-secondary mt-3 w-100">Back</a>
+    </div>
+</div>
+
+</body>
+</html>
