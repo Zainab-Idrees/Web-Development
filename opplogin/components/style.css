@@ -1,0 +1,13 @@
+#form{
+    width: 400px;
+    height: auto;
+    border: 2px solid rgb(20, 111, 82);
+    border-radius: 10px;
+     box-shadow: 0px 0px 15px rgba(1, 82, 37, 0.3);
+     background-color: aliceblue;
+}
+#body1{
+    background-image: url(/opplogin/assets/bgimg.jpg);
+    background-size: contain;
+
+}
